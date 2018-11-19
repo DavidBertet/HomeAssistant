@@ -1,0 +1,9 @@
+# Delay homekit start to permit Hue to be ready before device initialization
+
+- alias: 'Start HomeKit'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - delay: 00:01  # Waits 1 minutes
+    - service: homekit.start

@@ -1,0 +1,125 @@
+title: Home
+views:
+  - title: default_view
+    icon: mdi:home
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: glance
+            title: Outside
+            show_name: false
+            show_state: false
+            entities:
+              - sun.sun
+              - sensor.yr_symbol
+          - type: glance
+            title: Kitchen
+            show_name: false
+            entities:
+              - sensor.temperature_kitchen
+              - sensor.humidity_kitchen
+          - type: glance
+            title: Living room
+            show_name: false
+            entities:
+              - sensor.temperature_living_room
+              - sensor.humidity_living_room
+              - sensor.illumination_gateway
+              - binary_sensor.smoke_sensor_living_room
+              - binary_sensor.back_door_sensor
+          - type: glance
+            title: Entrance
+            show_name: false
+            entities:
+              - binary_sensor.front_door_sensor
+          - type: glance
+            title: Bathroom
+            show_name: false
+            entities:
+              - sensor.temperature_bathroom
+              - sensor.humidity_bathroom
+          - type: glance
+            title: Parents bedroom
+            show_name: false
+            entities:
+              - light.hue_white_parents_bedroom
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Living room lights
+            show_header_toggle: true
+            entities:
+              - light.hue_go_tv
+              - light.iris_tv
+              - light.hue_white_tv
+          - type: entities
+            title: Dining room lights
+            show_header_toggle: true
+            entities:
+              - light.gateway_light
+              - light.hue_white_dining_room
+              - light.hue_go_dining_room
+      - type: media-control
+        entity: media_player.spotify
+      - type: entities
+        title: Garage
+        entities:
+          - cover.garage_car_door
+          - light.garage
+          - sensor.garage_pedestrian_door
+          - sensor.garage_temperature
+          - sensor.garage_humidity
+      - type: entities
+        title: Others
+        entities:
+          - climate.salle_a_manger
+          - script.livingroom_light
+  - title: Camera
+    cards:
+      - type: picture-glance
+        title: Garage
+        entities:
+          - cover.garage_car_door
+          - light.garage
+        camera_image: camera.garage
+  - title: Kitchen
+    cards:
+      - type: entities
+        title: Kitchen sensors
+        show_header_toggle: true
+        entities:
+          - sensor.temperature_kitchen
+          - sensor.humidity_kitchen
+          - sensor.pressure_kitchen
+  - title: Living Room
+    cards:
+      - type: entities
+        title: Living room sensors
+        show_header_toggle: true
+        entities:
+          - sensor.temperature_living_room
+          - sensor.humidity_living_room
+          - sensor.pressure_living_room
+      - type: media-control
+        entity: media_player.spotify
+  - title: Bathroom
+    cards:
+      - type: entities
+        title: Bathroom sensors
+        show_header_toggle: true
+        entities:
+          - sensor.temperature_bathroom
+          - sensor.humidity_bathroom
+          - sensor.pressure_bathroom
+  - title: Other
+    cards:
+      - type: entities
+        title: System monitor
+        show_header_toggle: true
+        entities:
+          - sensor.disk_free_
+          - sensor.ipv4_address_wlan0
+          - sensor.last_boot
+          - sensor.since_last_boot
+          - sensor.processor_use
+          - sensor.memory_free

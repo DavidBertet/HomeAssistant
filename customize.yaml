@@ -1,0 +1,94 @@
+# Living room
+climate.salle_a_manger:
+  friendly_name: Living room thermostat
+sensor.temperature_living_room:
+  friendly_name: Living room temperature
+sensor.humidity_living_room:
+  friendly_name: Living room humidity
+  icon: mdi:water-percent
+sensor.pressure_living_room:
+  friendly_name: Living room pressure
+binary_sensor.smoke_sensor_living_room:
+  friendly_name: Living room smoke sensor
+  icon: mdi:fire
+binary_sensor.vaccum_switch:
+  friendly_name: Vaccum
+sensor.illumination_gateway:
+  friendly_name: Living room illumination
+binary_sensor.back_door_sensor:
+  friendly_name: Back door
+
+light.gateway_light:
+  friendly_name: Gateway
+light.hue_go_tv:
+  friendly_name: Hue Go
+light.iris_tv:
+  friendly_name: Iris
+light.hue_white_tv:
+  friendly_name: Hue White
+
+media_player.living_room:
+  start_off: true
+remote.living_room:
+  start_off: true
+
+# Dining room
+light.hue_white_dining_room:
+  friendly_name: Hue White
+light.hue_go_dining_room:
+  friendly_name: Hue Go
+
+# Bathroom
+sensor.temperature_bathroom:
+  friendly_name: Bathroom temperature
+sensor.humidity_bathroom:
+  friendly_name: Bathroom humidity
+  icon: mdi:water-percent
+sensor.pressure_bathroom:
+  friendly_name: Bathroom pressure
+
+# Kitchen
+sensor.temperature_kitchen:
+  friendly_name: Kitchen temperature
+sensor.humidity_kitchen:
+  friendly_name: Kitchen humidity
+  icon: mdi:water-percent
+sensor.pressure_kitchen:
+  friendly_name: Kitchen pressure
+
+# Entrance
+binary_sensor.front_door_sensor:
+  friendly_name: Front door
+binary_sensor.doorbell_switch:
+  friendly_name: Doorbell
+
+# Upstairs
+binary_sensor.smoke_sensor_upstairs:
+  friendly_name: Upstairs smoke sensor
+
+# Garage
+light.garage:
+  friendly_name: Garage light
+sensor.garage_pedestrian_door:
+  friendly_name: Garage pedestrian door
+sensor.garage_temperature:
+  friendly_name: Garage temperature
+sensor.garage_humidity:
+  friendly_name: Garage humidity
+cover.garage_car_door:
+  friendly_name: Garage car door
+  device_class: garage
+
+# Groups
+group.all_temperature_sensors:
+  friendly_name: Temperature sensors
+group.all_humidity_sensors:
+  friendly_name: Humidity sensors
+group.all_smoke_sensors:
+  friendly_name: Smoke sensors
+group.all_door_sensors:
+  friendly_name: Doors
+
+# Weather
+sensor.yr_symbol:
+  friendly_name: Weather

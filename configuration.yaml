@@ -1,0 +1,149 @@
+# https://www.home-assistant.io/docs/configuration/basic/
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret home_timezone
+  # Customization file
+  customize: !include customize.yaml
+
+# Enables the frontend
+# https://www.home-assistant.io/components/frontend/
+frontend:
+
+# Enables configuration UI
+# https://www.home-assistant.io/components/config/
+config:
+
+hassio:
+
+# https://www.home-assistant.io/components/http/
+http:
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# # https://www.home-assistant.io/components/updater/
+updater:
+
+# Discover some devices automatically
+# https://www.home-assistant.io/components/discovery/
+discovery:
+
+# Enables support for tracking state changes over time
+# https://www.home-assistant.io/components/history/
+history:
+
+# Purge history after 14 days
+# https://www.home-assistant.io/components/recorder/
+recorder:
+    purge_keep_days: 14
+    
+# View all events in a logbook
+# https://www.home-assistant.io/components/logbook/
+logbook:
+
+# Track the sun
+# https://www.home-assistant.io/components/sun/
+sun:
+
+# Individual configuration files
+# https://home-assistant.io/docs/configuration/splitting_configuration/
+group: !include groups.yaml
+automation: !include_dir_merge_list automation/
+script: !include_dir_merge_named script/
+sensor: !include_dir_merge_list sensor/
+light: !include_dir_merge_list light/
+cover: !include_dir_merge_list cover/
+
+# Google Calendar
+# https://www.home-assistant.io/components/calendar.google/
+google:
+  client_id: !secret calendar_id
+  client_secret: !secret calendar_secret
+  track_new_calendar: false
+  
+# Notification
+# https://www.home-assistant.io/components/telegram_bot.polling/
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_david_id
+
+# https://www.home-assistant.io/components/notify.telegram/
+notify:
+  - name: david
+    platform: telegram
+    chat_id: !secret telegram_david_id
+
+# Homekit
+# https://www.home-assistant.io/components/homekit/
+homekit:
+    auto_start: false
+    filter:
+        exclude_domains:
+          - automation
+        exclude_entities:
+          - light.living_room
+          - light.bedroom
+
+# Xiaomi
+# https://www.home-assistant.io/components/xiaomi_aqara/
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_gateway_key
+    
+# Netatmo
+# https://www.home-assistant.io/components/netatmo/
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+# Spotify
+# https://www.home-assistant.io/components/media_player.spotify/
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
+
+# MQTT
+# https://www.home-assistant.io/components/mqtt/
+mqtt:
+  broker: core-mosquitto
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  
+# Configurator access
+# https://www.home-assistant.io/components/panel_iframe/
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio.local:3218
+    
+# Camera
+# https://www.home-assistant.io/components/camera.generic/
+camera:
+  - platform: ffmpeg
+    name: "Garage"
+    input: -rtsp_transport tcp -i rtsp://192.168.1.39:8554/unicast
+
+# Log
+# https://www.home-assistant.io/components/logger/
+logger:
+  default: warning
+#  logs:
+#     homeassistant.components.homekit: debug

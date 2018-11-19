@@ -1,0 +1,21 @@
+# Doorbell
+
+- alias: Launch doorbell on button press
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.doorbell_switch
+      click_type: single
+  action:
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: 34ce00923ad8
+        ringtone_id: 10
+        ringtone_vol: 30
+    - condition: template
+      value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.launch_doorbell_on_button_press.attributes.last_triggered) | int > 60 }}'
+    - service: notify.david
+      data:
+        message: "Hey ! Quelqu'un vient de sonner"
+

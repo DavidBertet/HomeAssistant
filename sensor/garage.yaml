@@ -1,0 +1,17 @@
+# Garage device
+
+- platform: mqtt
+  name: "Garage pedestrian door"
+  state_topic: "garage/pedestrian_door/state"
+  payload_on: "1"
+  payload_off: "0"
+
+- platform: mqtt
+  state_topic: 'garage/temparture/state'
+  name: 'Garage Temperature'
+  unit_of_measurement: '°C'
+
+- platform: mqtt
+  state_topic: 'garage/humidity/state'
+  name: 'Garage Humidity'
+  unit_of_measurement: '%'

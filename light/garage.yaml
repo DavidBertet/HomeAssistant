@@ -1,0 +1,9 @@
+# Garage device
+
+- platform: mqtt
+  name: "Garage"
+  state_topic: "garage/light/state"
+  command_topic: "garage/light/command"
+  payload_on: "1"
+  payload_off: "0"
+

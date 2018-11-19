@@ -1,0 +1,126 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.all_temperature_sensors
+    - group.all_humidity_sensors
+    - climate.salle_a_manger
+    - group.all_smoke_sensors
+    - group.living_room_lights
+    - group.dining_room_lights
+    - sun.sun
+    - sensor.yr_symbol
+    - media_player.living_room_speaker
+    - media_player.spotify
+    - script.livingroom_light
+    - group.garage
+    - group.all_door_sensors
+    
+kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+    - group.kitchen_sensors
+
+living_room:
+  name: Living Room
+  view: yes
+  entities:
+    - group.living_room_sensors
+    - media_player.apple_tv
+    - remote.apple_tv
+    - media_player.living_room_speaker
+    - media_player.spotify
+
+bathroom:
+  name: Bathroom
+  view: yes
+  entities:
+    - group.bathroom_sensors
+    
+other:
+  name: Other
+  view: yes
+  entities:
+    - group.system_monitor
+
+all_temperature_sensors:
+  entities:
+    - sensor.temperature_living_room
+    - sensor.temperature_kitchen
+    - sensor.temperature_bathroom
+all_humidity_sensors:
+  entities:
+    - sensor.humidity_living_room
+    - sensor.humidity_kitchen
+    - sensor.humidity_bathroom
+all_smoke_sensors:
+  entities:
+    - binary_sensor.smoke_sensor_living_room
+all_door_sensors:
+  entities:
+    - binary_sensor.back_door_sensor
+    - binary_sensor.front_door_sensor
+
+living_room_lights:
+  name: Living room lights
+  entities:
+    - light.hue_go_tv
+    - light.iris_tv
+    - light.hue_white_tv
+
+living_room_sensors:
+  name: Living room sensors
+  entities:
+    - sensor.temperature_living_room
+    - sensor.humidity_living_room
+    - sensor.pressure_living_room
+
+dining_room_lights:
+  name: Dining room lights
+  entities:
+    - light.gateway_light
+    - light.hue_white_dining_room
+    - light.hue_go_dining_room
+
+bathroom_sensors:
+  name: Bathroom sensors
+  entities:
+    - sensor.temperature_bathroom
+    - sensor.humidity_bathroom
+    - sensor.pressure_bathroom
+
+kitchen_sensors:
+  name: Kitchen sensors
+  entities:
+    - sensor.temperature_kitchen
+    - sensor.humidity_kitchen
+    - sensor.pressure_kitchen
+    
+garage:
+  name: Garage
+  entities:
+    - cover.garage_car_door
+    - light.garage
+    - sensor.garage_pedestrian_door
+    - sensor.garage_temperature
+    - sensor.garage_humidity
+    
+system_monitor:
+  name: System monitor
+  entities:
+    - sensor.cpu_used
+    - sensor.ram_free
+    - sensor.disk_free_
+    - sensor.ipv4_address_wlan0
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.cpu_temperature
+    - sensor.signal_strength
+    - sensor.link_quality
+    - sensor.ram_available
+    - sensor.processor_use
+    - sensor.memory_free
+    - sensor.ha_installed_version
+    - sensor.ha_current_version
+    - sensor.home_assistant_up_time

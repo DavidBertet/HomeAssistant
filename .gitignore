@@ -1,0 +1,23 @@
+# A * ensures that everything will be ignored.
+*
+
+# Files whitelist, these will not be ignored.
+!**.yaml
+!.gitignore
+!*.md
+!.travis.yml
+!.HA_VERSION
+
+# Folders whitelist, these will not be ignored
+!extras
+!automation
+!script
+!cover
+!light
+!sensor
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+
