@@ -1,0 +1,15 @@
+# plateform attributes is a custom components
+# https://github.com/pilotak/HomeAssistant-CustomComponents/blob/master/sensor/sensor.attributes.markdown
+
+- platform: attributes
+  friendly_name: "Batteries"
+  attribute: battery_level
+  unit_of_measurement: "%"
+  entities:
+    - binary_sensor.front_door_sensor
+    - binary_sensor.back_door_sensor
+    - sensor.temperature_living_room
+    - sensor.temperature_kitchen
+    - sensor.temperature_bathroom
+    - binary_sensor.smoke_sensor_living_room
+    - binary_sensor.smoke_sensor_upstairs
