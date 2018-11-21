@@ -42,6 +42,9 @@ discovery:
 # Enables support for tracking state changes over time
 # https://www.home-assistant.io/components/history/
 history:
+    exclude:
+        entities:
+          - sensor.since_last_boot
 
 # Purge history after 14 days
 # https://www.home-assistant.io/components/recorder/
@@ -51,6 +54,9 @@ recorder:
 # View all events in a logbook
 # https://www.home-assistant.io/components/logbook/
 logbook:
+    exclude:
+        entities:
+          - sensor.since_last_boot
 
 # Track the sun
 # https://www.home-assistant.io/components/sun/

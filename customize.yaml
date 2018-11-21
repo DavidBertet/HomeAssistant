@@ -16,6 +16,7 @@ binary_sensor.vaccum_switch:
 sensor.illumination_gateway:
   friendly_name: Living room illumination
 binary_sensor.back_door_sensor:
+  device_class: door
   friendly_name: Back door
 
 light.gateway_light:
@@ -58,6 +59,7 @@ sensor.pressure_kitchen:
 
 # Entrance
 binary_sensor.front_door_sensor:
+  device_class: door
   friendly_name: Front door
 binary_sensor.doorbell_switch:
   friendly_name: Doorbell

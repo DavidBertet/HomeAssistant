@@ -1,5 +1,8 @@
+# https://www.home-assistant.io/lovelace/
 title: Home
 views:
+# ----------------------------------------
+# Home
   - title: default_view
     icon: mdi:home
     cards:
@@ -49,23 +52,24 @@ views:
             title: Living room lights
             show_header_toggle: true
             entities:
+              - light.hue_white_tv
               - light.hue_go_tv
               - light.iris_tv
-              - light.hue_white_tv
           - type: entities
             title: Dining room lights
             show_header_toggle: true
             entities:
-              - light.gateway_light
               - light.hue_white_dining_room
               - light.hue_go_dining_room
+              - light.gateway_light
       - type: media-control
         entity: media_player.spotify
       - type: entities
         title: Garage
+        show_header_toggle: false
         entities:
-          - cover.garage_car_door
           - light.garage
+          - cover.garage_car_door
           - sensor.garage_pedestrian_door
           - sensor.garage_temperature
           - sensor.garage_humidity
@@ -75,15 +79,19 @@ views:
           - climate.salle_a_manger
           - script.livingroom_light
 
+# ----------------------------------------
+# Camera
   - title: Camera
     cards:
       - type: picture-glance
         title: Garage
         entities:
-          - cover.garage_car_door
           - light.garage
+          - cover.garage_car_door
         camera_image: camera.garage
 
+# ----------------------------------------
+# Kitchen
   - title: Kitchen
     cards:
       - type: entities
@@ -94,6 +102,8 @@ views:
           - sensor.humidity_kitchen
           - sensor.pressure_kitchen
 
+# ----------------------------------------
+# Living room
   - title: Living Room
     cards:
       - type: entities
@@ -106,6 +116,8 @@ views:
       - type: media-control
         entity: media_player.spotify
 
+# ----------------------------------------
+# Bathroom
   - title: Bathroom
     cards:
       - type: entities
@@ -116,6 +128,8 @@ views:
           - sensor.humidity_bathroom
           - sensor.pressure_bathroom
 
+# ----------------------------------------
+# Other
   - title: Other
     cards:
       - type: entities
