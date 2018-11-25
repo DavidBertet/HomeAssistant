@@ -41,6 +41,7 @@ views:
             entities:
               - sensor.temperature_bathroom
               - sensor.humidity_bathroom
+              - switch.plug_fan_bathroom
           - type: glance
             title: Parents bedroom
             show_name: false
@@ -127,6 +128,7 @@ views:
           - sensor.temperature_bathroom
           - sensor.humidity_bathroom
           - sensor.pressure_bathroom
+          - switch.plug_fan_bathroom
 
 # ----------------------------------------
 # Other

@@ -1,0 +1,34 @@
+# Bathroom fan
+
+# Switch
+- alias: Ventilation with switch
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_fan_bathroom
+      click_type: single
+  action:
+    - service: homeassistant.toggle
+      entity_id: switch.plug_fan_bathroom
+
+# Humidity
+- alias: Start ventilation on humidity level high
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_bathroom
+    value_template: '{{ sensor.humidity_bathroom - sensor.humidity_living_room }}'
+    above: 10
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.plug_fan_bathroom
+
+- alias: Stop ventilation on humidity level normal
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_bathroom
+    value_template: '{{ sensor.humidity_bathroom - sensor.humidity_living_room }}'
+    above: 5
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.plug_fan_bathroom
