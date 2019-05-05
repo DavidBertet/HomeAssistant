@@ -161,7 +161,7 @@ views:
     cards:
       - type: entities
         title: System monitor
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - sensor.disk_free
           - sensor.ipv4_address_wlan0
@@ -170,6 +170,7 @@ views:
           - sensor.memory_free
       - type: entities
         title: Batteries
+        show_header_toggle: false
         entities:
           - sensor.front_door_sensor_battery_level
           - sensor.back_door_sensor_battery_level

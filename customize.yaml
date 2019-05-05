@@ -46,12 +46,6 @@ binary_sensor.switch_fan_bathroom:
   friendly_name: Bathroom fan switch
 switch.plug_fan_bathroom:
   friendly_name: Bathroom fan plug
-  icon_template: >
-    {% if (state == "on") %}
-      mdi:fan
-    {% else %}
-      mdi:fan-off
-    {% endif %}
   
 # Hugo
 sensor.temperature_hugo:
@@ -94,7 +88,7 @@ binary_sensor.smoke_sensor_upstairs:
 # Garage
 light.garage:
   friendly_name: Garage light
-sensor.garage_pedestrian_door:
+binary_sensor.garage_pedestrian_door:
   device_class: door
   friendly_name: Garage pedestrian door
 sensor.garage_temperature:
