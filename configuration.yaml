@@ -47,6 +47,8 @@ updater:
 # Discover some devices automatically
 # https://www.home-assistant.io/components/discovery/
 discovery:
+  ignore:
+    - apple_tv
 
 # Enables support for tracking state changes over time
 # https://www.home-assistant.io/components/history/
@@ -112,11 +114,6 @@ homekit:
         exclude_entities:
           - light.living_room
           - light.bedroom
-
-# Apple TV
-# https://www.home-assistant.io/components/apple_tv/
-apple_tv:
-  start_off: true
 
 # Xiaomi
 # https://www.home-assistant.io/components/xiaomi_aqara/

@@ -28,9 +28,6 @@ light.iris_tv:
 light.hue_white_tv:
   friendly_name: Hue White
 
-media_player.living_room_3:
-  start_off: true
-
 # Dining room
 light.hue_white_dining_room:
   friendly_name: Hue White
@@ -55,7 +52,6 @@ switch.plug_fan_bathroom:
     {% else %}
       mdi:fan-off
     {% endif %}
-
   
 # Hugo
 sensor.temperature_hugo:
