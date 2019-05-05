@@ -7,6 +7,7 @@
 !*.md
 !.travis.yml
 !.HA_VERSION
+!manifest.json
 !**.py
 
 # Folders whitelist, these will not be ignored
