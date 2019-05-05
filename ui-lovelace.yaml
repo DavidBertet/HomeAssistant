@@ -15,12 +15,51 @@ views:
             entities:
               - sun.sun
               - sensor.yr_symbol
+              - sensor.yr_temperature
+
+          - type: glance
+            title: Bathroom
+            show_name: false
+            entities:
+              - sensor.temperature_bathroom
+              - sensor.humidity_bathroom
+              - switch.plug_fan_bathroom
+
+          - type: glance
+            title: Parents bedroom
+            show_name: false
+            entities:
+              - light.hue_white_parents_bedroom
+
+          - type: glance
+            title: Hugo bedroom
+            show_name: false
+            entities:
+              - sensor.temperature_hugo
+              - sensor.humidity_hugo
+
+          - type: glance
+            title: Attic
+            show_name: false
+            entities:
+              - sensor.temperature_attic
+              - sensor.humidity_attic
+
+      - type: vertical-stack
+        cards:
+          - type: glance
+            title: Entrance
+            show_name: false
+            entities:
+              - binary_sensor.front_door_sensor
+
           - type: glance
             title: Kitchen
             show_name: false
             entities:
               - sensor.temperature_kitchen
               - sensor.humidity_kitchen
+
           - type: glance
             title: Living room
             show_name: false
@@ -30,25 +69,7 @@ views:
               - sensor.illumination_gateway
               - binary_sensor.smoke_sensor_living_room
               - binary_sensor.back_door_sensor
-          - type: glance
-            title: Entrance
-            show_name: false
-            entities:
-              - binary_sensor.front_door_sensor
-          - type: glance
-            title: Bathroom
-            show_name: false
-            entities:
-              - sensor.temperature_bathroom
-              - sensor.humidity_bathroom
-              - switch.plug_fan_bathroom
-          - type: glance
-            title: Parents bedroom
-            show_name: false
-            entities:
-              - light.hue_white_parents_bedroom
-      - type: vertical-stack
-        cards:
+
           - type: entities
             title: Living room lights
             show_header_toggle: true
@@ -56,6 +77,7 @@ views:
               - light.hue_white_tv
               - light.hue_go_tv
               - light.iris_tv
+
           - type: entities
             title: Dining room lights
             show_header_toggle: true
@@ -63,17 +85,20 @@ views:
               - light.hue_white_dining_room
               - light.hue_go_dining_room
               - light.gateway_light
+
       - type: media-control
         entity: media_player.spotify
+
       - type: entities
         title: Garage
         show_header_toggle: false
         entities:
           - light.garage
           - cover.garage_car_door
-          - sensor.garage_pedestrian_door
+          - binary_sensor.garage_pedestrian_door
           - sensor.garage_temperature
           - sensor.garage_humidity
+
       - type: entities
         title: Others
         entities:
@@ -138,10 +163,9 @@ views:
         title: System monitor
         show_header_toggle: true
         entities:
-          - sensor.disk_free_
+          - sensor.disk_free
           - sensor.ipv4_address_wlan0
           - sensor.last_boot
-          - sensor.since_last_boot
           - sensor.processor_use
           - sensor.memory_free
       - type: entities

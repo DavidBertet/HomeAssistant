@@ -4,7 +4,7 @@
 - alias: Ventilation with switch
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_fan_bathroom
       click_type: single
@@ -17,8 +17,8 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.humidity_bathroom
-    value_template: '{{ sensor.humidity_bathroom - sensor.humidity_living_room }}'
-    above: 10
+    value_template: '{{ state | float - states.sensor.humidity_hugo.state | float }}'
+    above: 12
   action:
     - service: homeassistant.turn_on
       entity_id: switch.plug_fan_bathroom
@@ -27,8 +27,8 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.humidity_bathroom
-    value_template: '{{ sensor.humidity_bathroom - sensor.humidity_living_room }}'
-    above: 5
+    value_template: '{{ state | float - states.sensor.humidity_hugo.state | float }}'
+    below: 9
   action:
     - service: homeassistant.turn_off
       entity_id: switch.plug_fan_bathroom

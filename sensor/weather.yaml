@@ -1,3 +1,6 @@
 # Weather prediction
 
 - platform: yr
+  monitored_conditions:
+    - temperature
+    - symbol

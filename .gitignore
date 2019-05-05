@@ -16,7 +16,9 @@
 !cover
 !light
 !sensor
+!binary_sensor
 !custom_components
+!attributes
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml

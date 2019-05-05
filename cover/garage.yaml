@@ -1,7 +1,6 @@
 # Garage device
 - platform: mqtt
   name: "Garage Car Door"
-  friendly_name: "Garage"
   state_topic: "garage/car_door/state"
   command_topic: "garage/car_door/command"
   payload_open: "1"

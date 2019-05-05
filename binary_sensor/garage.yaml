@@ -1,0 +1,7 @@
+# Garage device
+
+- platform: mqtt
+  name: "Garage pedestrian door"
+  state_topic: "garage/pedestrian_door/state"
+  payload_on: "1"
+  payload_off: "1"

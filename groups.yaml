@@ -111,7 +111,7 @@ system_monitor:
   entities:
     - sensor.cpu_used
     - sensor.ram_free
-    - sensor.disk_free_
+    - sensor.disk_free
     - sensor.ipv4_address_wlan0
     - sensor.last_boot
     - sensor.since_last_boot

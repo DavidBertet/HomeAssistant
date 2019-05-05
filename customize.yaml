@@ -28,9 +28,7 @@ light.iris_tv:
 light.hue_white_tv:
   friendly_name: Hue White
 
-media_player.living_room:
-  start_off: true
-remote.living_room:
+media_player.living_room_3:
   start_off: true
 
 # Dining room
@@ -51,6 +49,31 @@ binary_sensor.switch_fan_bathroom:
   friendly_name: Bathroom fan switch
 switch.plug_fan_bathroom:
   friendly_name: Bathroom fan plug
+  icon_template: >
+    {% if (state == "on") %}
+      mdi:fan
+    {% else %}
+      mdi:fan-off
+    {% endif %}
+
+  
+# Hugo
+sensor.temperature_hugo:
+  friendly_name: Hugo temperature
+sensor.humidity_hugo:
+  friendly_name: Hugo humidity
+  icon: mdi:water-percent
+sensor.pressure_hugo:
+  friendly_name: Hugo pressure
+
+# Attic
+sensor.temperature_attic:
+  friendly_name: Attic temperature
+sensor.humidity_attic:
+  friendly_name: Attic humidity
+  icon: mdi:water-percent
+sensor.pressure_attic:
+  friendly_name: Attic pressure
 
 # Kitchen
 sensor.temperature_kitchen:
@@ -76,6 +99,7 @@ binary_sensor.smoke_sensor_upstairs:
 light.garage:
   friendly_name: Garage light
 sensor.garage_pedestrian_door:
+  device_class: door
   friendly_name: Garage pedestrian door
 sensor.garage_temperature:
   friendly_name: Garage temperature
